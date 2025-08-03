@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KS Xplain - Unlock Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #121212;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .header {
+      padding: 20px;
+      background-color: #1f1f1f;
+      font-size: 30px;
+      font-weight: bold;
+      color: #00ffae;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 30px 0;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .social-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #1e1e1e;
+      border: 2px solid #00ffae;
+      color: #00ffae;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .social-button img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .social-button:hover {
+      background: #00ffae;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .instruction {
+      font-size: 18px;
+      color: #ccc;
+      margin: 20px;
+      padding: 0 20px;
+    }
+
+    .watch-button, .unlock-button {
+      padding: 14px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+      background-color: #00ffae;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 255, 174, 0.3);
+      margin: 30px 0;
+      transition: all 0.3s ease;
+      animation: floatUpDown 2s ease-in-out infinite;
+    }
+
+    .watch-button:hover, .unlock-button:hover {
+      background-color: #00e6a0;
+    }
+
+    .unlock-button {
+      display: none;
+    }
+
+    .note {
+      font-size: 12px;
+      color: gray;
+      margin-top: 20px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes floatUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🔝 Header -->
+  <div class="header">
+    <img src="https://i.ibb.co/JWWZm0dS/Picsart-25-08-04-01-13-55-513.png" alt="KS Logo">
+    KS Xplain
+  </div>
+
+  <!-- 🔗 Social Media Buttons -->
+  <div class="social-buttons">
+    <a href="https://www.instagram.com/ksxplain.12?igsh=MXM0enp3eTQwYXk3MA==" target="_blank" class="social-button">
+      <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram"> Instagram
+    </a>
+    <a href="https://youtube.com/@ksxplain?si=pCfnw7TpBAeg79zn" target="_blank" class="social-button">
+      <img src="https://img.icons8.com/fluency/48/youtube-play.png" alt="YouTube"> YouTube
+    </a>
+    <a href="https://t.me/AllTypeOfLinkss" target="_blank" class="social-button">
+      <img src="https://img.icons8.com/fluency/48/telegram-app.png" alt="Telegram"> Telegram
+    </a>
+  </div>
+
+  <!-- 📢 Instructions -->
+  <p class="instruction">
+    Click the button below, wait on the ad page for at least <strong>10 seconds</strong>, then come back to unlock your link.
+  </p>
+
+  <!-- ▶️ Watch Ad Button -->
+  <button class="watch-button" onclick="watchAd()">▶️ Click to Watch Ad & Start Unlock</button>
+
+  <!-- 🔓 Unlock Button -->
+  <button id="unlockBtn" class="unlock-button">
+    🔓 Get Your Link
+  </button>
+
+  <p class="note">Make sure to stay on the ad page for at least 10 seconds before returning here.</p>
+
+  <script>
+    // ✏️ MONETAG LINK (change here only!)
+    const adLink = "https://otieu.com/4/8152315";
+
+    // ✅ GET FINAL LINK from URL param
+    const urlParams = new URLSearchParams(window.location.search);
+    const finalLink = urlParams.get("final");
+
+    // Reset on load
+    localStorage.removeItem('adClickedAt');
+
+    function watchAd() {
+      if (!finalLink) {
+        alert("Error: No final link found!");
+        return;
+      }
+      localStorage.setItem('adClickedAt', Date.now());
+      window.open(adLink, '_blank');
+    }
+
+    setInterval(() => {
+      const clicked = localStorage.getItem('adClickedAt');
+      if (clicked && (Date.now() - clicked) > 10000 && finalLink) {
+        const btn = document.getElementById('unlockBtn');
+        btn.style.display = 'inline-block';
+        btn.onclick = () => window.location.href = finalLink;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
