@@ -157,17 +157,29 @@
 
   <p class="note">Make sure to stay on the ad page for at least 10 seconds before returning here.</p>
 
+  <!-- 📽️ How to Open Link Tutorial Section -->
+  <div style="margin: 60px 0 40px;">
+    <h2 style="color: #00ffae; font-size: 26px; animation: fadeIn 1s ease-in-out;">
+      📽️ How to Open the Link?
+    </h2>
+
+    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; margin-top:20px; border-radius:12px; box-shadow:0 0 10px rgba(0,255,174,0.3);">
+      <iframe src="https://www.youtube.com/embed/8CJf26c5wyM"
+              frameborder="0" allowfullscreen 
+              style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:12px;">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- 💸 Monetag Interstitial Ad Script -->
   <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('groleegni.net',9665186,document.createElement('script'))</script>
 
+  <!-- 🔓 Unlock Script -->
   <script>
-    // ✏️ MONETAG LINK (change here only!)
     const adLink = "https://otieu.com/4/9665630";
-
-    // ✅ GET FINAL LINK from URL param
     const urlParams = new URLSearchParams(window.location.search);
     const finalLink = urlParams.get("final");
 
-    // Reset on load
     localStorage.removeItem('adClickedAt');
 
     function watchAd() {
