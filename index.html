@@ -5,18 +5,18 @@
   <title>KS Xplain - Unlock Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1B38ZV38JF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- ✅ Google Analytics Global Site Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B38ZV38JF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1B38ZV38JF');
+  </script>
 
-  gtag('config', 'G-1B38ZV38JF');
-</script>
-  
+  <!-- ✅ Monetag Verification -->
   <meta name="monetag" content="42af3a362806946a12173ab76689821a">
-  
+
   <style>
     body {
       background: #121212;
@@ -33,7 +33,6 @@
       font-size: 30px;
       font-weight: bold;
       color: #00ffae;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -51,7 +50,6 @@
       flex-wrap: wrap;
       gap: 15px;
       margin: 30px 0;
-      animation: fadeIn 1.2s ease;
     }
 
     .social-button {
@@ -99,7 +97,6 @@
       box-shadow: 0 4px 12px rgba(0, 255, 174, 0.3);
       margin: 30px 0;
       transition: all 0.3s ease;
-      animation: floatUpDown 2s ease-in-out infinite;
     }
 
     .watch-button:hover, .unlock-button:hover {
@@ -116,18 +113,11 @@
       margin-top: 20px;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    @keyframes floatUpDown {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-6px);
-      }
+    #timer {
+      font-size: 20px;
+      color: #00ffae;
+      display: none;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -160,19 +150,17 @@
   <!-- ▶️ Watch Ad Button -->
   <button class="watch-button" onclick="watchAd()">▶️ Click to Watch Ad & Start Unlock</button>
 
+  <!-- ⏳ Timer -->
+  <p id="timer">⏳ Please wait... 10s</p>
+
   <!-- 🔓 Unlock Button -->
-  <button id="unlockBtn" class="unlock-button">
-    🔓 Get Your Link
-  </button>
+  <button id="unlockBtn" class="unlock-button">🔓 Get Your Link</button>
 
   <p class="note">Make sure to stay on the ad page for at least 10 seconds before returning here.</p>
 
   <!-- 📽️ How to Open Link Tutorial Section -->
   <div style="margin: 60px 0 40px;">
-    <h2 style="color: #00ffae; font-size: 26px; animation: fadeIn 1s ease-in-out;">
-      📽️ How to Open the Link?
-    </h2>
-
+    <h2 style="color: #00ffae; font-size: 26px;">📽️ How to Open the Link?</h2>
     <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; margin-top:20px; border-radius:12px; box-shadow:0 0 10px rgba(0,255,174,0.3);">
       <iframe src="https://www.youtube.com/embed/8CJf26c5wyM"
               frameborder="0" allowfullscreen 
@@ -190,6 +178,9 @@
     const urlParams = new URLSearchParams(window.location.search);
     const finalLink = urlParams.get("final");
 
+    const timerEl = document.getElementById("timer");
+    const unlockBtn = document.getElementById("unlockBtn");
+
     localStorage.removeItem('adClickedAt');
 
     function watchAd() {
@@ -197,18 +188,42 @@
         alert("Error: No final link found!");
         return;
       }
+
+      // ✅ Event: Watch Ad Click
+      gtag('event', 'watch_ad_clicked', {
+        'event_category': 'Unlock Flow',
+        'event_label': 'User clicked Watch Ad'
+      });
+
       localStorage.setItem('adClickedAt', Date.now());
       window.open(adLink, '_blank');
-    }
 
-    setInterval(() => {
-      const clicked = localStorage.getItem('adClickedAt');
-      if (clicked && (Date.now() - clicked) > 10000 && finalLink) {
-        const btn = document.getElementById('unlockBtn');
-        btn.style.display = 'inline-block';
-        btn.onclick = () => window.location.href = finalLink;
-      }
-    }, 1000);
+      // ⏳ Show Countdown Timer
+      let seconds = 10;
+      timerEl.style.display = "block";
+      timerEl.innerText = `⏳ Please wait... ${seconds}s`;
+
+      const countdown = setInterval(() => {
+        seconds--;
+        if (seconds > 0) {
+          timerEl.innerText = `⏳ Please wait... ${seconds}s`;
+        } else {
+          clearInterval(countdown);
+          timerEl.innerText = "✅ Done! Click below to unlock.";
+          unlockBtn.style.display = "inline-block";
+
+          unlockBtn.onclick = () => {
+            // ✅ Event: Link Unlocked
+            gtag('event', 'link_unlocked', {
+              'event_category': 'Unlock Flow',
+              'event_label': 'User unlocked final link'
+            });
+
+            window.location.href = finalLink;
+          };
+        }
+      }, 1000);
+    }
   </script>
 </body>
 </html>
