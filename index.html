@@ -5,10 +5,10 @@
   <script>(function(s){s.dataset.zone='9862693',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
   
   <meta charset="UTF-8" />
-  <title>KS Xplain - 3-Step Unlock</title>
+  <title>KS Xplain - Unlock</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- ✅ Google Analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1B38ZV38JF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -42,7 +42,7 @@
     .brand{font-size:28px; font-weight:800; color:var(--brand); text-shadow:var(--glow)}
 
     .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
-      padding:22px; margin-top:18px; animation:fadeIn .5s ease;}
+      padding:22px; margin-top:18px;}
 
     .progress-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-weight:600;}
     .progress-text small{color:var(--muted); font-weight:500}
@@ -53,190 +53,126 @@
     .btns{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:18px}
     .btn{border:0; cursor:pointer; padding:14px 20px; border-radius:12px;
       font-weight:700; font-size:16px; color:#04130e; background:var(--brand);
-      box-shadow:var(--glow),0 8px 18px rgba(0,0,0,.35); transition:.2s}
-    .btn.secondary{background:#222736; color:#cde; border:1px solid rgba(255,255,255,.06)}
-    .btn[disabled]{opacity:.55; cursor:not-allowed}
+      box-shadow:var(--glow);}
+    .btn.secondary{background:#222736; color:#cde; display:none;}
 
     .timer{margin-top:14px; font-weight:700; color:#b8ffe9;
       background:rgba(0,255,174,.08); border:1px dashed rgba(0,255,174,.35);
-      padding:10px 14px; border-radius:999px; display:none;
-      width:max-content; margin-inline:auto; text-align:center;}
+      padding:10px 14px; border-radius:999px; display:none; text-align:center;}
 
     .socials{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:18px}
     .social{display:inline-flex; align-items:center; gap:8px; padding:10px 14px;
       border-radius:12px; text-decoration:none; color:#dff; font-weight:700;
-      background:#1b2030; border:1px solid rgba(255,255,255,.06);}
+      background:#1b2030;}
     .social img{width:22px; height:22px}
-
-    .tutorial{margin-top:22px}
-    .tutorial h3{margin:0 0 10px; color:var(--brand); text-align:center;}
-    .yt-wrap{position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:16px;}
-    .yt-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
-
-    .note{color:var(--muted); font-size:13px; margin-top:14px}
-
-    @keyframes fadeIn{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
   </style>
 </head>
+
 <body>
   <div class="wrap">
+
     <!-- Header -->
     <div class="header">
-      <img src="https://i.ibb.co/JWWZm0dS/Picsart-25-08-04-01-13-55-513.png" alt="KS Logo"/>
+      <img src="https://i.ibb.co/JWWZm0dS/Picsart-25-08-04-01-13-55-513.png"/>
       <div class="brand">KS Xplain</div>
     </div>
 
-    <!-- Main card -->
+    <!-- Follow -->
     <div class="card">
-      <div class="progress-head">
-        <div class="progress-text">
-          <div id="stepTitle">Step 1 of 3</div>
-          <small id="stepSubtitle">Watch Ad 1 → wait 10s → Next</small>
-        </div>
-        <strong id="stepTag">Ad 1</strong>
-      </div>
-      <div class="bar"><div id="barFill" class="bar-fill"></div></div>
-
-      <!-- Guide text -->
-      <p style="text-align:center; font-weight:700; margin-top:20px;">👉 Click below, watch the Ad, wait 10s, then continue</p>
-
-      <div class="btns">
-        <button id="watchBtn" class="btn">▶️ Watch Ad 1</button>
-        <button id="nextBtn" class="btn secondary" style="display:none">➡️ Next</button>
-      </div>
-
-      <!-- Timer -->
-      <div id="timerChip" class="timer">⏳ Please wait… 10s</div>
-
-      <p class="note">Tip: Har step complete hone ke baad Next button aayega. Last step pe <b>Get Link</b> milega.</p>
-    </div>
-
-    <!-- Socials -->
-    <div class="card">
-      <div style="text-align:center; margin-bottom:6px; color:var(--muted)">Follow us</div>
+      <div style="text-align:center; color:var(--muted)">Follow us</div>
       <div class="socials">
-        <a class="social" href="https://www.instagram.com/ksxplain.12?igsh=MXM0enp3eTQwYXk3MA==" target="_blank">
-          <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="">Instagram
+        <a class="social" href="https://www.instagram.com/ksxplain" target="_blank">
+          <img src="https://img.icons8.com/fluency/48/instagram-new.png">Instagram
         </a>
-        <a class="social" href="https://youtube.com/@ksxplain?si=pCfnw7TpBAeg79zn" target="_blank">
-          <img src="https://img.icons8.com/fluency/48/youtube-play.png" alt="">YouTube
+        <a class="social" href="https://youtube.com/@ksxplain" target="_blank">
+          <img src="https://img.icons8.com/fluency/48/youtube-play.png">YouTube
         </a>
         <a class="social" href="https://t.me/ksxplain12" target="_blank">
-          <img src="https://img.icons8.com/fluency/48/telegram-app.png" alt="">Telegram
+          <img src="https://img.icons8.com/fluency/48/telegram-app.png">Telegram
         </a>
       </div>
     </div>
 
-    <!-- Tutorial -->
-    <div class="card tutorial">
-      <h3>📽️ How to unlock?</h3>
-      <div class="yt-wrap">
-        <iframe 
-          src="https://player.vimeo.com/video/1115288169?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;dnt=1" 
-          frameborder="0" 
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          style="width:100%;height:100%;border-radius:16px;" 
-          title="How To Open KS Link 🎥">
-        </iframe>
+    <!-- Main -->
+    <div class="card">
+      <div class="progress-head">
+        <div>
+          <div>Unlock Step</div>
+          <small>Watch Ad → wait → Get Link</small>
+        </div>
+        <strong>Ad</strong>
       </div>
+
+      <div class="bar"><div id="barFill" class="bar-fill"></div></div>
+
+      <div class="btns">
+        <button id="watchBtn" class="btn">▶️ Watch Ad</button>
+        <button id="getBtn" class="btn secondary">🔓 Get Link</button>
+      </div>
+
+      <!-- ✅ Centered Message -->
+      <p id="msg" style="
+        display:none;
+        margin-top:15px;
+        font-weight:700;
+        color:#b8ffe9;
+        background:rgba(0,255,174,.08);
+        padding:10px;
+        border-radius:10px;
+        text-align:center;
+      ">
+        🎁 Free link + best movie tips — bas ek follow & subscribe Bro ❤️
+      </p>
+
+      <div id="timer" class="timer">⏳ Please wait...</div>
     </div>
-    <script src="https://player.vimeo.com/api/player.js"></script>
+
   </div>
 
-  <script>
-    // CONFIG
-    const adLinks = [
-      "https://otieu.com/4/9678202",
-      "https://otieu.com/4/7983246",
-      "https://otieu.com/4/8152315"
-    ];
-    const WAIT_SECONDS = 10;
-    const reportLink = "https://t.me/KSMovieRequest"; // error report button
+<script>
+const adLink = "https://otieu.com/4/9678202";
+const WAIT = 10;
 
-    const urlParams = new URLSearchParams(location.search);
-    const finalLink = urlParams.get("final");
+const params = new URLSearchParams(location.search);
+const finalLink = params.get("final");
 
-    let currentStep = 1, ticking=false, countdownId=null;
+const watchBtn = document.getElementById("watchBtn");
+const getBtn = document.getElementById("getBtn");
+const timer = document.getElementById("timer");
+const msg = document.getElementById("msg");
+const barFill = document.getElementById("barFill");
 
-    const watchBtn=document.getElementById("watchBtn");
-    const nextBtn=document.getElementById("nextBtn");
-    const timerChip=document.getElementById("timerChip");
-    const stepTitle=document.getElementById("stepTitle");
-    const stepSubtitle=document.getElementById("stepSubtitle");
-    const stepTag=document.getElementById("stepTag");
-    const barFill=document.getElementById("barFill");
+watchBtn.onclick = () => {
+  window.open(adLink, "_blank");
 
-    function setProgress(step){
-      stepTitle.textContent=`Step ${step} of 3`;
-      stepTag.textContent= step<3 ? `Ad ${step}` : `Final`;
-      stepSubtitle.textContent = step<3 ?
-        `Watch Ad ${step} → wait ${WAIT_SECONDS}s → Next` :
-        `Watch Ad 3 → wait ${WAIT_SECONDS}s → Get Link`;
-      watchBtn.textContent = `▶️ Watch Ad ${step}`;
-      watchBtn.disabled=false;
-      nextBtn.style.display="none";
-      timerChip.style.display="none";
-      timerChip.textContent=`⏳ Please wait… ${WAIT_SECONDS}s`;
+  msg.style.display = "block";
+
+  let t = WAIT;
+  watchBtn.disabled = true;
+  timer.style.display = "block";
+
+  let i = setInterval(()=>{
+    t--;
+    timer.innerText = "⏳ Please wait... " + t + "s";
+
+    if(t <= 0){
+      clearInterval(i);
+
+      getBtn.style.display = "inline-block";
+      barFill.style.width = "100%";
+      timer.innerText = "🔓 Ready!";
     }
+  },1000);
+};
 
-    function startCountdown(){
-      let left=WAIT_SECONDS;
-      timerChip.style.display="block";
-      timerChip.textContent=`⏳ Please wait… ${left}s`;
-      watchBtn.disabled=true; ticking=true;
-
-      if(countdownId) clearInterval(countdownId);
-      countdownId=setInterval(()=>{
-        left--;
-        if(left>0){
-          timerChip.textContent=`⏳ Please wait… ${left}s`;
-        }else{
-          clearInterval(countdownId); ticking=false;
-          if(currentStep<3){
-            nextBtn.textContent="➡️ Next";
-            nextBtn.style.display="inline-block";
-          }else{
-            nextBtn.textContent="🔓 Get Link";
-            nextBtn.style.display="inline-block";
-          }
-          timerChip.textContent="✅ Done! Continue below.";
-          // progress update here
-          const pct=currentStep===1?33:(currentStep===2?66:100);
-          barFill.style.width=pct+"%";
-        }
-      },1000);
-    }
-
-    function openAdFor(step){
-      const link=adLinks[step-1];
-      if(!link){alert("Ad link missing."); return;}
-      window.open(link,"_blank");
-      startCountdown();
-    }
-
-    function goNext(){
-      if(ticking) return;
-      if(currentStep<3){
-        currentStep++; setProgress(currentStep);
-        window.scrollTo({top:0,behavior:'smooth'});
-      }else{
-        if(!finalLink){
-          document.body.innerHTML=`<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;color:white;text-align:center;">
-          <h2>❌ Broken Link</h2>
-          <p>Please report this issue:</p>
-          <a href="${reportLink}" target="_blank" style="background:#00ffae;color:#000;padding:12px 20px;border-radius:8px;font-weight:700;text-decoration:none;">📩 Report Here</a>
-          </div>`;
-          return;
-        }
-        location.href=finalLink;
-      }
-    }
-
-    setProgress(currentStep);
-    watchBtn.addEventListener("click",()=>{if(!ticking)openAdFor(currentStep);});
-    nextBtn.addEventListener("click",goNext);
-  </script>
+getBtn.onclick = () => {
+  if(!finalLink){
+    alert("Invalid link");
+    return;
+  }
+  location.href = finalLink;
+};
+</script>
 
 </body>
 </html>
